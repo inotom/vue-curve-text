@@ -1,0 +1,38 @@
+{
+  "name": "vue-curve-text",
+  "version": "1.0.0",
+  "description": "A Vue.js component that makes text align with the SVG curve.",
+  "main": "dist/vue-curve-text.js",
+  "config": {
+    "dist_dir": "dist",
+    "src_dir": "src"
+  },
+  "scripts": {
+    "start": "NODE_ENV=development webpack-dev-server",
+    "prebuild": "npm run lint:js && npm run clean",
+    "build": "NODE_ENV=production webpack -p",
+    "clean": "rimraf '**/.DS_Store' & rimraf $npm_package_config_dist_dir/*.js",
+    "lint:js": "eslint $npm_package_config_src_dir/js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "iNo (http://www.serendip.ws/)",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-eslint": "^8.2.2",
+    "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.6.1",
+    "eslint": "^4.19.1",
+    "prettier": "^1.11.1",
+    "rimraf": "^2.6.2",
+    "vue-loader": "^14.2.2",
+    "vue-template-compiler": "^2.5.16",
+    "webpack": "^4.5.0",
+    "webpack-cli": "^2.0.14",
+    "webpack-dev-server": "^3.1.1",
+    "webpack-merge": "^4.1.2"
+  },
+  "dependencies": {
+    "vue": "^2.5.16"
+  }
+}

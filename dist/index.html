@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>vue-curve-text</title>
+<style>
+.curve-text-ja {
+  fill: #f00;
+  font-size: 30px;
+  font-weight: bold;
+}
+.curve-text-ja svg {
+  border: 1px solid #f00;
+}
+</style>
+</head>
+<body>
+
+<h1>vue-curve-text</h1>
+
+<div class="curve-texts">
+  <div class="curve-text-en">
+    <vue-curve-text text="Hello, World!"></vue-curve-text>
+  </div>
+  <div class="curve-text-ja">
+    <vue-curve-text text="Hello, World!" :width="300" :height="100" :r="50" :debug="true" textid="my-curve-text"></vue-curve-text>
+  </div>
+</div>
+
+<script src="//cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="vue-curve-text.min.js"></script>
+<script>
+Vue.use(VueCurveText);
+Array.prototype.slice.call(document.querySelectorAll('.curve-texts'), 0).forEach(function(el) {
+  new Vue({
+    el: el
+  });
+});
+</script>
+</body>
+</html>
