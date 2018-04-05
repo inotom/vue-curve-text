@@ -13,6 +13,32 @@ A Vue.js component that makes text align with the SVG curve.
 | `textid`   | text anchor id  |          |
 | `:debug`   | show curve line | `false`  |
 
+## Usage
+
+### Browser
+
+```html
+<script src="//cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="vue-curve-text.min.js"></script>
+```
+
+```js
+Vue.use(VueCurveText);
+new Vue({
+  el: '#target-element-id'
+});
+```
+
+### ES module
+
+```js
+import VueCurveText from 'vue-curve-text';
+new Vue({
+  el: '#target-element-id',
+  components: { VueCurveText }
+});
+```
+
 ## Screenshot
 
 ![](https://raw.githubusercontent.com/inotom/vue-curve-text/master/vue-curve-text.png)
