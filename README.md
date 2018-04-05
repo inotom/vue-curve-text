@@ -15,6 +15,11 @@ A Vue.js component that makes text align with the SVG curve.
 
 ## Usage
 
+```html
+<vue-curve-text text="Hello, World!"></vue-curve-text>
+<vue-curve-text text="Hello, World!" :width="300" :height="100" :r="50" :debug="true" textid="my-curve-text"></vue-curve-text>
+```
+
 ### Browser
 
 ```html
