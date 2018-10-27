@@ -2,39 +2,57 @@
 <html lang="ja">
 <head>
 <meta charset="utf-8">
-<title>vue-curve-text</title>
+<meta name="viewport" content="width=device-width">
+<title>vue-curve-text Example</title>
 <style>
-.curve-text-ja {
-  fill: #f00;
+html {
+  font-size: 62.5%;
+}
+body {
+  font-size: 1.4rem;
+}
+.curve-text--large {
   font-size: 30px;
   font-weight: bold;
 }
-.curve-text-ja svg {
-  border: 1px solid #f00;
+.curve-text--outline svg {
+  border: 1px dashed #f00;
 }
 </style>
 </head>
 <body>
 
-<h1>vue-curve-text</h1>
+<h1>vue-curve-text Example</h1>
 
-<div class="curve-texts">
-  <div class="curve-text-en">
-    <vue-curve-text text="Hello, World!"></vue-curve-text>
+<div id="app">
+  <div class="curve-text">
+    <curve-text>Hello, World!</curve-text>
+    <curve-text
+      color="#f00">Hello, World!</curve-text>
+    <curve-text>こんにちは、世界！</curve-text>
   </div>
-  <div class="curve-text-ja">
-    <vue-curve-text text="Hello, World!" :width="300" :height="100" :r="50" :debug="true" textid="my-curve-text"></vue-curve-text>
+  <div class="curve-text--outline curve-text--large">
+    <curve-text
+      :width="300"
+      :height="100"
+      :r="50"
+      textid="my-curve-text"
+      color="darkorange"
+      :debug="true">Hello, World!</curve-text>
+  </div>
+  <div class="curve-text--outline">
+    <curve-text
+      offset="50px"
+      :debug="true">Hello, World!</curve-text>
   </div>
 </div>
 
-<script src="//cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
 <script src="vue-curve-text.min.js"></script>
 <script>
-Vue.use(VueCurveText);
-Array.prototype.slice.call(document.querySelectorAll('.curve-texts'), 0).forEach(function(el) {
-  new Vue({
-    el: el
-  });
+Vue.use(CurveText);
+new Vue({
+  el: '#app'
 });
 </script>
 </body>

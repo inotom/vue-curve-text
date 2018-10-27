@@ -2,56 +2,108 @@
 
 A Vue.js component that makes text align with the SVG curve.
 
-## options
 
-| name       | content         | defaults |
-|:-----------|:----------------|:---------|
-| `text`     | display text    |          |
-| `:width`   | svg box width   | `200`    |
-| `:height`  | svg box height  | `50`     |
-| `:r`       | curve height    | `25`     |
-| `textid`   | text anchor id  |          |
-| `:debug`   | show curve line | `false`  |
+## Demo
 
-## Usage
+[Demo](http://sandbox.serendip.ws/vue-curve-text.html)
 
-```html
-<vue-curve-text text="Hello, World!"></vue-curve-text>
-<vue-curve-text text="Hello, World!" :width="300" :height="100" :r="50" :debug="true" textid="my-curve-text"></vue-curve-text>
-```
+
+## Screenshot
+
+![](https://raw.githubusercontent.com/inotom/vue-curve-text/v2.0.0/vue-curve-text.png)
+
+
+## Install
 
 ### Browser
 
 ```html
-<script src="//cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="vue.js"></script>
 <script src="vue-curve-text.min.js"></script>
 ```
 
-```js
-Vue.use(VueCurveText);
-new Vue({
-  el: '#target-element-id'
-});
+### npm
+
+```
+npm install --save @inotom/vue-curve-text
 ```
 
-### ES module
 
-```js
-import VueCurveText from 'vue-curve-text';
+## Usage
+
+### Browser
+
+```html
+<div id="app">
+  <curve-text>Hello, World!</curve-text>
+  <curve-text
+    :width="300"
+    :height="100"
+    :r="50"
+    offset="30%"
+    textid="my-curve-text"
+    color="#f00"
+    :debug="true">Hello, World!</curve-text>
+</div>
+
+<script src="vue.js"></script>
+<script src="vue-curve-text.min.js"></script>
+<script>
+Vue.use(CurveText);
 new Vue({
-  el: '#target-element-id',
-  components: { VueCurveText }
+  el: '#app'
 });
+</script>
 ```
 
-## Screenshot
 
-![](https://raw.githubusercontent.com/inotom/vue-curve-text/master/vue-curve-text.png)
+### SCF
+
+```vue
+<template>
+  <div>
+    <curve-text>Hello, World!</curve-text>
+    <curve-text
+      :width="300"
+      :height="100"
+      :r="50"
+      offset="30%"
+      textid="my-curve-text"
+      color="#f00"
+      :debug="true">Hello, World!</curve-text>
+  </div>
+</template>
+
+<script>
+import CurveText from '@inotom/vue-curve-text';
+
+export default {
+  components: {
+    CurveText
+  }
+}
+</script>
+```
+
+
+## Props
+
+| Props      | Type     | Default          | Description           |
+|------------|----------|------------------|-----------------------|
+| `:width`   | Number   | `200`            | Svg box width         |
+| `:height`  | Number   | `50`             | Svg box height        |
+| `:r`       | Number   | `25`             | Curve height          |
+| `offset`   | String   | `"50%"`          | Text start position   |
+| `textid`   | String   | `""`             | Text anchor id        |
+| `color`    | String   | `"currentColor"` | Text color            |
+| `:debug`   | Boolean  | `false`          | Show curve line       |
+
 
 ## License
 
 MIT
 
+
 ## Author
 
-iNo
+inotom
