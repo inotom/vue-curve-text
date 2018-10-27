@@ -1,0 +1,10 @@
+src/
+config/
+.babelrc
+.browserslistrc
+.editorconfig
+.eslintrc
+.node-version
+.prettierrc
+.tern-project
+vue-curve-text.png
