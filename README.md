@@ -2,15 +2,16 @@
 
 A Vue.js component that makes text align with the SVG curve.
 
+From v3.0.0, it works for Vue 3.
 
 ## Demo
 
-[Demo](http://sandbox.serendip.ws/vue-curve-text.html)
+[Demo](https://sandbox.serendip.ws/vue-curve-text.html)
 
 
 ## Screenshot
 
-![](https://raw.githubusercontent.com/inotom/vue-curve-text/v2.0.0/vue-curve-text.png)
+![](https://raw.githubusercontent.com/inotom/vue-curve-text/v3.0.0/vue-curve-text.png)
 
 
 ## Install
@@ -18,8 +19,8 @@ A Vue.js component that makes text align with the SVG curve.
 ### Browser
 
 ```html
-<script src="vue.js"></script>
-<script src="vue-curve-text.min.js"></script>
+<script src="vue.global.prod.js"></script>
+<script src="vue-curve-text.umd.js"></script>
 ```
 
 ### npm
@@ -46,18 +47,22 @@ npm install --save @inotom/vue-curve-text
     :debug="true">Hello, World!</curve-text>
 </div>
 
-<script src="vue.js"></script>
-<script src="vue-curve-text.min.js"></script>
+<script src="vue.global.prod.js"></script>
+<script src="vue-curve-text.umd.js"></script>
 <script>
-Vue.use(CurveText);
-new Vue({
-  el: '#app'
-});
+const { createApp } = Vue;
+const { CurveText } = SwsVueCurveText;
+
+createApp({
+  components: {
+    CurveText,
+  },
+}).mount('#app');
 </script>
 ```
 
 
-### SCF
+### SFC (TypeScript)
 
 ```vue
 <template>
@@ -74,14 +79,8 @@ new Vue({
   </div>
 </template>
 
-<script>
-import CurveText from '@inotom/vue-curve-text';
-
-export default {
-  components: {
-    CurveText
-  }
-}
+<script setup lang="ts">
+import { CurveText } from '@inotom/vue-curve-text';
 </script>
 ```
 
