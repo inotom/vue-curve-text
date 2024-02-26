@@ -1,10 +1,10 @@
 src/
 config/
-.babelrc
 .browserslistrc
 .editorconfig
-.eslintrc
+.eslintrc.json
 .node-version
 .prettierrc
-.tern-project
-vue-curve-text.png
+.local.vimrc
+.vscode/
+.vim/
